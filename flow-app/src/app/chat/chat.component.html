@@ -1,0 +1,58 @@
+<ul id="dropdown1" class="dropdown-content">
+  <li><a (click)='goToProfile()'>Profile</a></li>
+  <li><a (click)='logout($event)'>Logout</a></li>
+</ul>
+<nav>
+  <div class="nav-wrapper teal">
+    <a href="#!" class="brand-logo">Flow!</a>
+    <ul class="right hide-on-med-and-down">
+      <!-- Dropdown Trigger -->
+      <li>
+        <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a> -->
+        <a class="btn-floating btn-large waves-effect waves-light red modal-trigger" href="#modal1"> <i class="material-icons">add</i></a>
+      </li>
+      <li><a class="dropdown-trigger" data-target="dropdown1">{{username}}<i class="material-icons right">arrow_drop_down</i></a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class = "row">
+  <app-group-list #groupList class="col s3" [user]="user" [chatbox]="chatbox"></app-group-list>
+  <app-chat-box class = "col s9" #chatbox></app-chat-box>
+</div>
+
+
+
+<!-- Modal Structure -->
+<div id="modal1" class="modal modal-fixed-footer">
+    <div class="modal-content">
+        <div class="row">
+          <div class = "col s10" *ngIf = "selected.length < 2"></div>
+            <a class="modal-action modal-close waves-effect waves-green btn-flat col s2" *ngIf = "selected.length < 2" (click) = "newConversation($event)">Done</a>
+            <div class="input-field col s9" *ngIf = "selected.length >= 2" >
+                <input id="groupName" type="text" [(ngModel)]="groupName" class="validate">
+                <label for="groupName">Group name</label>
+                <span class="helper-text red-text" *ngIf="error">{{error}}</span>
+            </div>
+            <a class="modal-action modal-close waves-effect waves-green btn-flat col s3" *ngIf = "selected.length >= 2" (click)  = "newGroup($event)">Create Group</a>
+        </div>
+      <h4>New conversation</h4>
+          <div class="input-field">
+              <input id = "searchField" type="text" [(ngModel)]="searchParam" (ngModelChange)="search($event)">
+              <label for="searchField">Search</label>
+          </div>
+          <ul class="collection"  *ngIf = "searchResults.length != 0">
+              <li *ngFor="let r of searchResults" class="collection-item"><div>{{r.name}}<a class="secondary-content"><label>
+                  <input type="checkbox" class="filled-in" (click)="updateSelected(r)" />
+                  <span></span>
+                </label></a></div></li>
+          </ul>
+    </div>
+    <div class="modal-footer" *ngIf = "selected.length >= 1">
+        <div class="chip" *ngFor = "let s of selected">
+            {{s.name}}
+            <i class="close material-icons" (click) = "removeSelected(s)">close</i>
+          </div>
+    </div>
+
+  </div>

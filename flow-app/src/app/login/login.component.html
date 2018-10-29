@@ -1,0 +1,25 @@
+<div class="login-container">
+  <div class="row">
+    <div class="">
+      <div class="card white white lighten-4">
+        <div class="card-content black-text">
+          <h4 class="pink-text text-darken-4">Login</h4>
+          <div class="input-field">
+            <input id="uname" type="email" class="validate" [(ngModel)]="uname" required>
+            <label for="uname">Username</label>
+          </div>
+          <div class="input-field">
+            <input id="password" type="password" class="validate" pattern=".{1,}" [(ngModel)]="password" required>
+            <label for="password">Password</label>
+          </div>
+        </div>
+        <div class="card-action">
+          <div class="right-align">
+            <a class="waves-effect teal-text text-darken-2 waves-light btn-flat" (click)='goToSignUp($event)' value="signup">Sign up</a>
+            <a class="waves-effect pink darken-4 waves-light btn-large" (click)='login($event)' value="Login">Login</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

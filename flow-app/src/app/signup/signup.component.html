@@ -1,0 +1,49 @@
+<div class = "login-container">
+ 
+        <div class="row">
+            <div class="">
+                <div class="card white white lighten-4">
+                <div class="card-content black-text">
+               <h4 class="pink-text text-darken-4">Signup</h4>
+         
+          <p>Please fill in this form to create an account.</p>
+          <hr>
+    
+          <div class="input-field">
+          <input id= "name" type="text" [(ngModel)]="name"  class="validate"  required>
+          <label for="name"><b>Enter Name</b></label>
+          </div>
+          
+          <div class="input-field">
+          <input id= "email" type="email"  name="email" [(ngModel)]="email"  class="validate"  required>
+          <label for="email"><b>Enter Email</b></label>
+          </div>
+    <!-- 
+          <div class="input-field">
+              <input type="text" [(ngModel)]="model.field" name="field" #field="ngModel" email/>
+    <p *ngIf="field.errors?.email">error message</p>
+              <label for="email"><b>Enter Email</b></label>
+           </div> -->
+    
+          <div class="input-field">
+          <input id="psw" type="password" name="psw" [(ngModel)]="password"  class="validate"  required>
+          <label for="psw"><b>Enter Password</b></label>  
+          </div>
+                
+          <div class="input-field"> 
+          <input id="psw-repeat" type="password" name="psw-repeat" [(ngModel)]="confirmPassword"  class="validate"  required>
+          <label for="psw-repeat"><b>Repeat Password</b></label>
+          </div>
+          
+          <!-- <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p> -->
+          </div>
+               
+          <div class="card-action">
+            <div class="left-align">
+                <a class="waves-effect pink darken-4 waves-light btn-large" (click)='signUp($event)' value="signup">Sign up</a>
+             </div>
+         </div>
+         </div>      
+       </div>
+      </div>
+    </div>

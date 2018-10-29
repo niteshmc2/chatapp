@@ -1,0 +1,51 @@
+<div class="profile-container">
+    <div class="row">
+      <div class="">
+        <div class="card white white lighten-4">
+          <div class="card-content black-text">
+            <h4 class="pink-text text-darken-4">Update password</h4>
+            <div class="input-field">
+                <input id="oldPsw" type="password" class="validate" pattern=".{1,}" [(ngModel)]="oldPsw" required>
+                <label for="oldPsw">Old password</label>
+              </div>
+            <div class="input-field">
+              <input id="reset" type="password" class="validate" pattern=".{1,}" [(ngModel)]="reset" required>
+              <label for="reset">Reset password</label>
+            </div>
+            <div class="input-field">
+              <input id="password" type="password" class="validate" pattern=".{1,}" [(ngModel)]="password" required>
+              <label for="password">Confirm Password</label>
+            </div>
+          </div>
+          <div class="card-action">
+            <div class="right-align">
+              <a class="waves-effect pink darken-4 waves-light btn-large" (click)='resetConfirm($event)' value="Confirm">Confirm</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="">
+        <div class="card white white lighten-4">
+          <div class="card-content black-text">
+            <h5 class="pink-text text-darken-4">Delete account</h5>
+            <div class="input-field">
+                <input id="oldPswForDel" type="password" class="validate" pattern=".{1,}" [(ngModel)]="oldPswForDel" required>
+                <label for="oldPswForDel">Old password</label>
+              </div>
+          </div>
+          <div class="card-action">
+            <div class="right-align">
+              <a class="waves-effect teal-text text-darken-2 waves-light btn-flat" (click)='delete($event)' value="Delete">Delete</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+

@@ -1,0 +1,9 @@
+<div class = "group-list-container">
+  <ul *ngIf="show" class="collection">
+    <li *ngFor="let group of groupsArr" class="collection-item avatar" (click)="loadMessages(group)">
+      {{group.groupname}}
+      <i class="material-icons circle pink darken-2">account_box</i>
+    </li>
+  </ul>
+</div>
+

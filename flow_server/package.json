@@ -1,0 +1,25 @@
+{
+  "name": "flow_server",
+  "version": "1.0.0",
+  "description": "This is the server for flow webapp",
+  "main": "app.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Icarus",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^1.0.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "jquery": "^3.3.1",
+    "jsonwebtoken": "^8.2.0",
+    "mongoose": "^4.13.3",
+    "nodemon": "^1.17.3",
+    "socket.io": "^2.1.0",
+    "socketio": "^1.0.0"
+  },
+  "devDependencies": {
+    "@angular/cli": "^1.7.4"
+  }
+}
