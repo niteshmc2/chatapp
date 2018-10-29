@@ -1,4 +1,4 @@
-# final-project-icarus2-0
+# Chat app with MEAN
 final-project-icarus2-0 created by GitHub Classroom
 
 Welcome to Flow!
